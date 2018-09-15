@@ -1,0 +1,19 @@
+{
+  "name": "udemy-notes-node",
+  "version": "1.0.0",
+  "description": "udemy-notes-node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermondel/udemy-notes-node.git"
+  },
+  "author": "Ermondel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ermondel/udemy-notes-node/issues"
+  },
+  "homepage": "https://github.com/ermondel/udemy-notes-node#readme"
+}
