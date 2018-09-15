@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ermondel/udemy-notes-node/issues"
   },
-  "homepage": "https://github.com/ermondel/udemy-notes-node#readme"
+  "homepage": "https://github.com/ermondel/udemy-notes-node#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
 }
