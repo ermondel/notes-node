@@ -3,6 +3,7 @@ console.log('Starting app');
 const fs = require('fs');
 const notes = require('./notes');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 const command = process.argv[2];
 console.log('Command:', command);
