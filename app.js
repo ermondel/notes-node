@@ -6,7 +6,7 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const argv = yargs.argv;
-const command = process.argv[2];
+const command = argv._[0];
 console.log('Command:', command);
 
 if (command === 'add') 
