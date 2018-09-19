@@ -5,12 +5,13 @@ const notes = require('./notes');
 const _ = require('lodash');
 const yargs = require('yargs');
 
+const argv = yargs.argv;
 const command = process.argv[2];
 console.log('Command:', command);
 
 if (command === 'add') 
 {
-    console.log('Adding new note');
+    notes.addNote(argv.title, argv.body);
 } 
 else if (command === 'list')
 {
