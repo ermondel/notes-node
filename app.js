@@ -31,7 +31,9 @@ else if (command === 'read')
 }
 else if (command === 'remove')
 {
-    notes.removeNote(argv.title);
+    const noteRemoved = notes.removeNote(argv.title);
+    const message = noteRemoved ? 'Note was removed' : 'Note not found';
+    console.log(message);
 }
 else 
 {
