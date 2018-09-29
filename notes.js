@@ -45,4 +45,10 @@ const removeNote = (title) => {
     return notes.length !== filteredNotes.length;
 }
 
-module.exports = { addNote, getAll, getNote, removeNote };
+const logNote = (note) => {
+    console.log('--');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+}
+
+module.exports = { addNote, getAll, getNote, removeNote, logNote };
