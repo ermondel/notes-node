@@ -1,5 +1,3 @@
-console.log('Starting app');
-
 const fs = require('fs');
 const notes = require('./notes');
 const _ = require('lodash');
@@ -7,7 +5,6 @@ const yargs = require('yargs');
 
 const argv = yargs.argv;
 const command = argv._[0];
-console.log('Command:', command);
 
 if (command === 'add') 
 {
