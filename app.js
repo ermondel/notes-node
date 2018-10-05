@@ -1,6 +1,6 @@
-const fs = require('fs');
+const fs    = require('fs');
 const notes = require('./notes');
-const _ = require('lodash');
+const _     = require('lodash');
 const yargs = require('yargs');
 
 const titleOptions = {
