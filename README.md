@@ -1,11 +1,13 @@
-![Nodejs](https://github.com/ermondel/tsttmp/blob/master/files/Nodejs.png)
-### Basic info
-![CLI](https://github.com/ermondel/tsttmp/blob/master/files/CLI24v2.png) CLI application for user's notes. Project for Udemy NodeJS course.
+![Node.js ](https://github.com/ermondel/tsttmp/blob/master/files/icons48b/Nodejs48v2.png)
+
+# Application for user's notes
+*Project for Udemy NodeJS course.*  
+
 #### Features
-Adding, reading, deleting and displaying a list of notes. Notes store in json format.
+![CLI](https://github.com/ermondel/tsttmp/blob/master/files/CLI24v2.png) Command-line interface. Add, read, delete notes and display a list of notes. Notes are stored in JSON format.    
+
 #### Technologies
-* Node.js
-* Yargs
-
-
-_Readme icons by Atrous and IconMafia, from iconscout._
+| name | description |
+| --- | --- |
+| Node.js | cross-platform JavaScript run-time environment |
+| Yargs | package for building interactive command line tools |
