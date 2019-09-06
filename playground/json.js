@@ -18,8 +18,8 @@ console.log(person);
 const fs = require('fs');
 
 const originalNote = {
-    title: 'Some title',
-    body: 'Some body',
+  title: 'Some title',
+  body: 'Some body'
 };
 const originalNoteString = JSON.stringify(originalNote);
 fs.writeFileSync('notes.json', originalNoteString);
