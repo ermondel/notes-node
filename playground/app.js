@@ -1,17 +1,41 @@
-const validator = require('validator');
-const chalk = require('chalk');
-const getNotes = require('./notes');
-const msg = getNotes();
+const yargs = require('yargs');
 
-console.log(msg);
-console.log(validator.isEmail('example@mail.com'));
-console.log(validator.isURL('https://example.com'));
+yargs.command({
+  command: 'add',
+  describe: 'Add a new note',
+  handler: function() {
+    console.log('Adding a new note');
+  }
+});
 
-const greenMsg = chalk.green('Success!');
-console.log(greenMsg);
+yargs.command({
+  command: 'remove',
+  describe: 'Remove a note',
+  handler: function() {
+    console.log('Removing the note');
+  }
+});
 
-const greenBoldMsg = chalk.green.bold('Success!');
-console.log(greenBoldMsg);
+yargs.command({
+  command: 'list',
+  describe: 'List your notes',
+  handler: function() {
+    console.log('Listing out all note');
+  }
+});
 
-const greenBoldInverseMsg = chalk.green.bold.inverse('Success!');
-console.log(greenBoldInverseMsg);
+yargs.command({
+  command: 'read',
+  describe: 'Read a note',
+  handler: function() {
+    console.log('Reading a note');
+  }
+});
+
+console.log(yargs.argv);
+
+// console.log(validator.isEmail('example@mail.com'));
+// console.log(validator.isURL('https://example.com'));
+// const greenMsg = chalk.green('Success!');
+// const greenBoldMsg = chalk.green.bold('Success!');
+// const greenBoldInverseMsg = chalk.green.bold.inverse('Success!');
