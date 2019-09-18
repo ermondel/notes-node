@@ -33,4 +33,18 @@ const loadNotes = () => {
   }
 };
 
-module.exports = { getNotes, addNote };
+const removeNote = title => {
+  const notes = loadNotes();
+  const notesFiltered = notes.filter(note => note.title !== title);
+  let msg = '';
+
+  if (notes.length > notesFiltered.length) {
+    saveNotes(notesFiltered);
+    msg = chalk.green('Note successfully deleted: ' + title);
+  } else {
+    msg = chalk.yellow('Note not found!');
+  }
+  console.log('\n' + msg + '\n');
+};
+
+module.exports = { getNotes, addNote, removeNote };
