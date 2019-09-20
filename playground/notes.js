@@ -1,6 +1,6 @@
 const fs = require('fs');
 const chalk = require('chalk');
-const tasks = require('./tests/fixtures/tasks');
+// const tasks = require('./tests/fixtures/tasks');
 
 const PATH = 'notes.json';
 
@@ -26,7 +26,13 @@ const getTasksToDo = () => {
 };
 
 const print = (msg, color) => {
-  console.log('\n' + chalk.keyword(color)(msg) + '\n');
+  if (msg && color) {
+    console.log('\n' + chalk.keyword(color)(msg) + '\n');
+  } else if (msg) {
+    console.log('\n' + msg + '\n');
+  } else {
+    console.log('\n');
+  }
 };
 
 const printItem = (n, color, msg) => {
