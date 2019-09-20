@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 const tasks = require('./tests/fixtures/tasks');
 
 const PATH = 'notes.json';
@@ -9,6 +10,7 @@ const save = notes => {
 
 const load = () => {
   try {
+    // return tasks;
     const data = fs.readFileSync(PATH);
     return JSON.parse(data);
   } catch (e) {
@@ -23,4 +25,12 @@ const getTasksToDo = () => {
   return [];
 };
 
-module.exports = { save, load, getTasksToDo };
+const print = (msg, color) => {
+  console.log('\n' + chalk.keyword(color)(msg) + '\n');
+};
+
+const printItem = (n, color, msg) => {
+  console.log(`${chalk.keyword(color)(n + '.')} ${msg}`);
+};
+
+module.exports = { save, load, getTasksToDo, print, printItem };

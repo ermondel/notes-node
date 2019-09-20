@@ -1,14 +1,14 @@
 module.exports = [
   {
-    text: 'Grocery shopping',
+    title: 'Grocery shopping',
     completed: true
   },
   {
-    text: 'Clean yard',
+    title: 'Clean yard',
     completed: false
   },
   {
-    text: 'Film course',
+    title: 'Film course',
     completed: false
   }
 ];

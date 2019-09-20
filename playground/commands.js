@@ -14,9 +14,9 @@ const addNote = (title, body) => {
     notesList.push({ title, body });
     notes.save(notesList);
 
-    console.log('\n' + chalk.green('New note added.') + '\n');
+    notes.print('New note added.', 'green');
   } else {
-    console.log('\n' + chalk.yellow('Note title taken!') + '\n');
+    notes.print('Note title taken!', 'yellow');
   }
 };
 
@@ -28,10 +28,26 @@ const removeNote = title => {
   if (notesList.length > notesFiltered.length) {
     notes.save(notesFiltered);
 
-    console.log('\n' + chalk.green('Note successfully deleted.') + '\n');
+    notes.print('Note successfully deleted.', 'green');
   } else {
-    console.log('\n' + chalk.yellow('Note not found!') + '\n');
+    notes.print('Note not found!', 'yellow');
   }
 };
 
-module.exports = { getNotes, addNote, removeNote };
+const listNotes = () => {
+  const notesList = notes.load();
+
+  if (notesList.length) {
+    notes.print('Your notes.', 'blue');
+
+    let n = 0;
+    let msg = '';
+
+    for (let note of notesList) notes.printItem(++n, 'blue', note.title);
+    console.log('\n');
+  } else {
+    notes.print('No notes.', 'orange');
+  }
+};
+
+module.exports = { getNotes, addNote, removeNote, listNotes };
