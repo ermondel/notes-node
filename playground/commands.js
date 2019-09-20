@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const notes = require('./notes');
 
 const getNotes = () => {
-  return 'Listing out all note';
+  console.log(notes.getTasksToDo());
 };
 
 const addNote = (title, body) => {

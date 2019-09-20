@@ -1,4 +1,5 @@
 const fs = require('fs');
+const tasks = require('./tests/fixtures/tasks');
 
 const PATH = 'notes.json';
 
@@ -15,4 +16,11 @@ const load = () => {
   }
 };
 
-module.exports = { save, load };
+const getTasksToDo = () => {
+  if (tasks.length > 0) {
+    return tasks.filter(note => note.completed === false);
+  }
+  return [];
+};
+
+module.exports = { save, load, getTasksToDo };
