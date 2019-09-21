@@ -1,52 +1,42 @@
 const fs = require('fs');
+const chalk = require('chalk');
+// const tasks = require('./tests/fixtures/tasks');
 
-const fetchNotes = () => {
+const PATH = 'notes.json';
+
+const save = notes => {
+  fs.writeFileSync(PATH, JSON.stringify(notes));
+};
+
+const load = () => {
   try {
-    const notesString = fs.readFileSync('notes-data.json');
-    return JSON.parse(notesString);
+    // return tasks;
+    const data = fs.readFileSync(PATH);
+    return JSON.parse(data);
   } catch (e) {
     return [];
   }
 };
 
-const saveNotes = notes => {
-  fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+const getTasksToDo = () => {
+  if (tasks.length > 0) {
+    return tasks.filter(note => note.completed === false);
+  }
+  return [];
 };
 
-const addNote = (title, body) => {
-  let notes = fetchNotes();
-  const note = { title, body };
-
-  const duplicateNotes = notes.filter(note => note.title === title);
-
-  if (duplicateNotes.length === 0) {
-    notes.push(note);
-    saveNotes(notes);
-    return note;
+const print = (msg, color) => {
+  if (msg && color) {
+    console.log('\n' + chalk.keyword(color)(msg) + '\n');
+  } else if (msg) {
+    console.log('\n' + msg + '\n');
+  } else {
+    console.log('\n');
   }
 };
 
-const getAll = () => {
-  return fetchNotes();
+const printItem = (n, color, msg) => {
+  console.log(`${chalk.keyword(color)(n + '.')} ${msg}`);
 };
 
-const getNote = title => {
-  const notes = fetchNotes();
-  const filteredNotes = notes.filter(note => note.title === title);
-  return filteredNotes[0];
-};
-
-const removeNote = title => {
-  const notes = fetchNotes();
-  const filteredNotes = notes.filter(note => note.title !== title);
-  saveNotes(filteredNotes);
-  return notes.length !== filteredNotes.length;
-};
-
-const logNote = note => {
-  console.log('--');
-  console.log(`Title: ${note.title}`);
-  console.log(`Body: ${note.body}`);
-};
-
-module.exports = { addNote, getAll, getNote, removeNote, logNote };
+module.exports = { save, load, getTasksToDo, print, printItem };
