@@ -4,11 +4,11 @@
 
 _Project for Udemy NodeJS course._
 
-#### About
+### About
 
 Adding, reading, displaying a list, deleting user notes in the command line interface.
 
-#### Install
+### Install
 
 Use the Download ZIP button, then unzip it, go to the directory and run the command
 
@@ -58,7 +58,7 @@ node app.js remove --title="bill"
 
 ```
 
-#### Technologies
+### Technologies
 
 | name    | description                                    |
 | ------- | ---------------------------------------------- |
