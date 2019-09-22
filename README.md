@@ -1,16 +1,67 @@
 ![Node.js ](https://github.com/ermondel/tsttmp/blob/master/files/icons48b/Nodejs48v2.png)
 
-# Application for user's notes
+## User Notes CLI App
 
 _Project for Udemy NodeJS course._
 
-#### Features
+#### About
 
-![CLI](https://github.com/ermondel/tsttmp/blob/master/files/CLI24v2.png) Command-line interface. Add, read, delete notes and display a list of notes. Notes are stored in JSON format.
+Adding, reading, displaying a list, deleting user notes in the command line interface.
+
+#### Install
+
+Use the Download ZIP button, then unzip it, go to the directory and run the command
+
+```
+npm install
+```
+
+### Usage
+
+get a list of notes
+
+```
+
+node app.js list
+
+```
+
+get help
+
+```
+
+node app.js --help
+
+```
+
+add a new note
+
+```
+
+node app.js add --title="bill" --body="to pay the bill"
+
+```
+
+read note
+
+```
+
+node app.js read --title="bill"
+
+```
+
+remove note
+
+```
+
+node app.js remove --title="bill"
+
+```
 
 #### Technologies
 
-| name    | description                                         |
-| ------- | --------------------------------------------------- |
-| Node.js | cross-platform JavaScript run-time environment      |
-| Yargs   | package for building interactive command line tools |
+| name    | description                                    |
+| ------- | ---------------------------------------------- |
+| Node.js | cross-platform JavaScript run-time environment |
+| Yargs   | building interactive command line tools        |
+| chalk   | terminal string styling                        |
